@@ -10,22 +10,32 @@ public class NilaiAkhir {
             double BOBOT_FINAL = 0.30;
 
             System.out.print("Nilai Praktikum : ");
-            int nilaiPraktikum = input.nextInt();
+            double nilaiPraktikum = input.nextDouble();
 
             System.out.print("Nilai Tugas : ");
-            int nilaiTugas = input.nextInt();
+            double nilaiTugas = input.nextDouble();
 
             System.out.print("Nilai MID : ");
-            int nilaiMid = input.nextInt();
+            double nilaiMid = input.nextDouble();
 
             System.out.print("Nilai Final : ");
-            int nilaiFinal = input.nextInt();
+            double nilaiFinal = input.nextDouble();
 
-            int nilaiAkhir = nilaiPraktikum * 30 / 100 + nilaiTugas * 20 / 100
-                    + nilaiMid * 20 / 100 + nilaiFinal * 30 / 100;
-            //Ketika menggunakan int maka hasilnya akan menjadi bilangan bulat,hasilnya 91
+            double nilaiAkhir = nilaiPraktikum * BOBOT_PRAKTIKUM + nilaiTugas * BOBOT_TUGAS
+                    + nilaiMid * BOBOT_MID + nilaiFinal * BOBOT_FINAL;
+            //Ketika menggunakan int maka hasilnya akan menjadi bilangan bulat,hasilnya 79
+            // Kenapa kurung tidak diperlukan karena Operator Precedence menentukan mana yang dikerjakan terlebih dahulu
+            // Perkalian pasti akan mendahului Penjumlahan jadi dalam kasus ini tanda kurung tidak diperlukan
 
-            System.out.print("Nilai Akhir : " + nilaiAkhir);
+            System.out.println("");
+            System.out.println("==== NILAI AKHIR =====");
+            System.out.println("Praktikum : " + nilaiPraktikum + " (30%)");
+            System.out.println("Tugas : " + nilaiTugas + " (20%)");
+            System.out.println("MID : " + nilaiMid + " (20%)");
+            System.out.println("Final : " + nilaiFinal + " (30%)");
+            System.out.println("");
+            System.out.println("Nilai Akhir : " + nilaiAkhir);
+
 
     }
 
