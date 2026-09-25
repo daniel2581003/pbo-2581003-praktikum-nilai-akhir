@@ -22,10 +22,20 @@ public class NilaiAkhir {
             double nilaiFinal = input.nextDouble();
 
             double nilaiAkhir = nilaiPraktikum * BOBOT_PRAKTIKUM + nilaiTugas * BOBOT_TUGAS
-                    + nilaiMid * BOBOT_MID + nilaiFinal * BOBOT_FINAL;
+                    + nilaiMid * BOBOT_MID;
+            nilaiAkhir += nilaiFinal * BOBOT_FINAL;
+            //Augmented Assignment
+            int potong = (int) nilaiAkhir;
+            int pembulatan = (int) Math.round(nilaiAkhir);
+            double selisih = nilaiAkhir - pembulatan;
+            boolean lulus  = nilaiAkhir>=60;
+
+
             //Ketika menggunakan int maka hasilnya akan menjadi bilangan bulat,hasilnya 79
             // Kenapa kurung tidak diperlukan karena Operator Precedence menentukan mana yang dikerjakan terlebih dahulu
             // Perkalian pasti akan mendahului Penjumlahan jadi dalam kasus ini tanda kurung tidak diperlukan
+
+
 
             System.out.println("");
             System.out.println("==== NILAI AKHIR =====");
@@ -35,6 +45,12 @@ public class NilaiAkhir {
             System.out.println("Final : " + nilaiFinal + " (30%)");
             System.out.println("");
             System.out.println("Nilai Akhir : " + nilaiAkhir);
+            System.out.println("Dipotong (int) : " + potong);
+            System.out.println("Dibulatkan (round) : " + pembulatan);
+            System.out.println("Selisih : " + selisih);
+            System.out.println("Lulus (>=60) : " + lulus);
+
+
 
 
     }
